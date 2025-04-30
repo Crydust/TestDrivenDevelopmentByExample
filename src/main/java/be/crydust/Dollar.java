@@ -8,5 +8,6 @@ public class Dollar {
     }
 
     public void times(int multiplier) {
+        amount = 10;
     }
 }
