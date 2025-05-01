@@ -5,7 +5,7 @@ Todo
 |----------------------------------------|--------|
 | 5 USD + 10 CHF = 10 USD if rate is 2:1 |        |
 | 5 USD * 2 = 10 USD                     | done   |
-| Make amount private                    |        |
+| Make amount private                    | done   |
 | Dollar side effects?                   | done   |
 | Money rounding?                        |        |
 | equals()                               | done   |

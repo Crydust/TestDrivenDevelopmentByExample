@@ -10,10 +10,8 @@ class MainTest {
     @Test
     void multiplication() {
         Dollar five = new Dollar(5);
-        Dollar times2 = five.times(2);
-        assertThat(times2.amount(), is(10));
-        Dollar times3 = five.times(3);
-        assertThat(times3.amount(), is(15));
+        assertThat(five.times(2), is(new Dollar(10)));
+        assertThat(five.times(3), is(new Dollar(15)));
     }
 
     @Test
