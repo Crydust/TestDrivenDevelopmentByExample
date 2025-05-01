@@ -8,4 +8,7 @@ Todo
 | Make amount private                    |        |
 | Dollar side effects?                   | done   |
 | Money rounding?                        |        |
-|                                        |        |
+| equals()                               | done   |
+| hashCode()                             |        |
+| Equal null                             |        |
+| Equal object                           |        |

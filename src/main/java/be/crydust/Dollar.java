@@ -1,13 +1,9 @@
 package be.crydust;
 
-public class Dollar {
-    public int amount;
-
-    public Dollar(int amount) {
-        this.amount = amount;
-    }
+public record Dollar(int amount) {
 
     public Dollar times(int multiplier) {
         return new Dollar(amount * multiplier);
     }
+
 }
