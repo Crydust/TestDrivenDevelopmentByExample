@@ -14,6 +14,6 @@ Todo
 | Equal object                           |        |
 | 5 CHF * 2 = 10 CHF                     | done   |
 | Dollar/Franc duplication               |        |
-| Common equals                          |        |
+| Common equals                          | doing  |
 | Common times                           |        |
 |                                        |        |
