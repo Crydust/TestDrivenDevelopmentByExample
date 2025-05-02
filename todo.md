@@ -17,5 +17,5 @@ Todo
 | Common equals                          | done   |
 | Common times                           |        |
 | Compare Francs with Dollars            | done   |
-| Currency?                              |        |
+| Currency?                              | done   |
 | Delete test francMultiplication        |        |

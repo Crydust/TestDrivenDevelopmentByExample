@@ -2,13 +2,13 @@ package be.crydust;
 
 public final class Franc extends Money {
 
-    public Franc(int amount) {
-        super(amount);
+    public Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
     @Override
     public Money times(int multiplier) {
-        return new Franc(amount * multiplier);
+        return Money.franc(amount * multiplier);
     }
 
 }
