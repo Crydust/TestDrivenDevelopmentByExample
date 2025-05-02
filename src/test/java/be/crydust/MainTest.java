@@ -18,6 +18,8 @@ class MainTest {
     void equality() {
         assertThat(new Dollar(5), is(new Dollar(5)));
         assertThat(new Dollar(5), not(new Dollar(6)));
+        assertThat(new Franc(5), is(new Franc(5)));
+        assertThat(new Franc(5), not(new Franc(6)));
     }
 
     @Test
