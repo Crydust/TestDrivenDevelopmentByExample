@@ -9,25 +9,25 @@ import static org.hamcrest.Matchers.not;
 class MainTest {
     @Test
     void multiplication() {
-        Dollar five = new Dollar(5);
-        assertThat(five.times(2), is(new Dollar(10)));
-        assertThat(five.times(3), is(new Dollar(15)));
+        Money five = Money.dollar(5);
+        assertThat(five.times(2), is(Money.dollar(10)));
+        assertThat(five.times(3), is(Money.dollar(15)));
     }
 
     @Test
     void equality() {
-        assertThat(new Dollar(5), is(new Dollar(5)));
-        assertThat(new Dollar(5), not(new Dollar(6)));
-        assertThat(new Franc(5), is(new Franc(5)));
-        assertThat(new Franc(5), not(new Franc(6)));
-        assertThat(new Franc(5), not(new Dollar(5)));
+        assertThat(Money.dollar(5), is(Money.dollar(5)));
+        assertThat(Money.dollar(5), not(Money.dollar(6)));
+        assertThat(Money.franc(5), is(Money.franc(5)));
+        assertThat(Money.franc(5), not(Money.franc(6)));
+        assertThat(Money.franc(5), not(Money.dollar(5)));
     }
 
     @Test
     void francMultiplication() {
-        Franc five = new Franc(5);
-        assertThat(five.times(2), is(new Franc(10)));
-        assertThat(five.times(3), is(new Franc(15)));
+        Money five = Money.franc(5);
+        assertThat(five.times(2), is(Money.franc(10)));
+        assertThat(five.times(3), is(Money.franc(15)));
     }
 
 }

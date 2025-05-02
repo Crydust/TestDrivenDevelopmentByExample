@@ -18,4 +18,4 @@ Todo
 | Common times                           |        |
 | Compare Francs with Dollars            | done   |
 | Currency?                              |        |
-|                                        |        |
+| Delete test francMultiplication        |        |
