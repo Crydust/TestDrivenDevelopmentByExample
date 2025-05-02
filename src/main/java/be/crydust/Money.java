@@ -1,7 +1,5 @@
 package be.crydust;
 
-import java.util.Objects;
-
 public class Money {
     protected final int amount;
 
@@ -12,7 +10,8 @@ public class Money {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Money money)) return false;
-        return amount == money.amount;
+        return amount == money.amount
+               && getClass() == money.getClass();
     }
 
 }

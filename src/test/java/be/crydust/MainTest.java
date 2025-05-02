@@ -20,6 +20,7 @@ class MainTest {
         assertThat(new Dollar(5), not(new Dollar(6)));
         assertThat(new Franc(5), is(new Franc(5)));
         assertThat(new Franc(5), not(new Franc(6)));
+        assertThat(new Franc(5), not(new Dollar(5)));
     }
 
     @Test
