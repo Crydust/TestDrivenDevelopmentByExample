@@ -13,7 +13,7 @@ Todo
 | Equal null                             |        |
 | Equal object                           |        |
 | 5 CHF * 2 = 10 CHF                     | done   |
-| Dollar/Franc duplication               |        |
+| Dollar/Franc duplication               | done   |
 | Common equals                          | done   |
 | Common times                           | done   |
 | Compare Francs with Dollars            | done   |
