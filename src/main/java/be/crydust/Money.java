@@ -1,6 +1,6 @@
 package be.crydust;
 
-public abstract class Money {
+public class Money {
     protected final int amount;
     protected final String currency;
 
@@ -17,7 +17,9 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     public String currency() {
         return currency;
@@ -27,7 +29,14 @@ public abstract class Money {
     public boolean equals(Object o) {
         if (!(o instanceof Money money)) return false;
         return amount == money.amount
-               && getClass() == money.getClass();
+               && currency().equals(money.currency());
     }
 
+    @Override
+    public String toString() {
+        return "Money{" +
+               "amount=" + amount +
+               ", currency='" + currency + '\'' +
+               '}';
+    }
 }

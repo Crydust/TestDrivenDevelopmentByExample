@@ -15,7 +15,7 @@ Todo
 | 5 CHF * 2 = 10 CHF                     | done   |
 | Dollar/Franc duplication               |        |
 | Common equals                          | done   |
-| Common times                           |        |
+| Common times                           | done   |
 | Compare Francs with Dollars            | done   |
 | Currency?                              | done   |
 | Delete test francMultiplication        |        |
