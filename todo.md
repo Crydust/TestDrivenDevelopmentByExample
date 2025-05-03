@@ -25,4 +25,4 @@ Todo
 | Equal object                           |        |
 | Delete test francMultiplication        | done   |
 | Sum.plus                               | done   |
-| Expression.times                       |        |
+| Expression.times                       | done   |
