@@ -3,6 +3,7 @@ package be.crydust;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
@@ -111,5 +112,12 @@ class MainTest {
         Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
         Money result = bank.reduce(sum, "USD");
         assertThat(result, is(Money.dollar(20)));
+    }
+
+    @Test
+    void plusSameCurrencyReturnsMoney() {
+        Expression five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        assertThat(sum, instanceOf(Money.class));
     }
 }
