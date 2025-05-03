@@ -63,8 +63,21 @@ class MainTest {
     @Test
     void reduceMoneyDifferentCurrency() {
         Bank bank = new Bank();
-        bank.addRate("CHF", "USR", 2);
+        bank.addRate("CHF", "USD", 2);
         Money result = bank.reduce(Money.franc(2), "USD");
         assertThat(result, is(Money.dollar(1)));
+    }
+
+    @Test
+    void identityRate() {
+        Bank bank = new Bank();
+        assertThat(bank.rate("USD", "USD"), is(1));
+    }
+
+    @Test
+    void storeRate() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        assertThat(bank.rate("CHF", "USD"), is(2));
     }
 }

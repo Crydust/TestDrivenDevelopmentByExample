@@ -1,17 +1,27 @@
 package be.crydust;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Bank {
+
+    private final Map<Pair, Integer> rates = new HashMap<>();
+
     public Money reduce(Expression source, String to) {
         return source.reduce(this, to);
     }
 
     public void addRate(String from, String to, int rate) {
-        // TODO from / rate == to
+        rates.put(new Pair(from, to), rate);
     }
 
     public int rate(String from, String to) {
-        return "CHF".equals(from) && "USD".equals(to)
-                ? 2
-                : 1;
+        if (from.equals(to)) {
+            return 1;
+        }
+        return rates.get(new Pair(from, to));
+    }
+
+    private record Pair(String from, String to) {
     }
 }

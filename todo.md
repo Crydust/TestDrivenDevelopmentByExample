@@ -14,10 +14,11 @@ Todo
 | Compare Francs with Dollars            | done   |
 | Currency?                              | done   |
 | 5 USD + 10 CHF = 10 USD if rate is 2:1 |        |
-| 5 USD + 5 USD = 10 USD                 |        |
+| 5 USD + 5 USD = 10 USD                 | done   |
 | Return Money from 5 USD + 5 USD        |        |
 | Bank.reduce(Money)                     | done   |
-| Reduce Money with currency conversion  | doing  |
+| Reduce Money with currency conversion  | done   |
+| Reduce(Bank, String)                   | done   |
 | Money rounding?                        |        |
 | hashCode()                             |        |
 | Equal null                             |        |
