@@ -15,6 +15,8 @@ Todo
 | Currency?                              | done   |
 | 5 USD + 10 CHF = 10 USD if rate is 2:1 |        |
 | 5 USD + 5 USD = 10 USD                 | doing  |
+| Return Money from 5 USD + 5 USD        |        |
+| Bank.reduce(Money)                     | done   |
 | Money rounding?                        |        |
 | hashCode()                             |        |
 | Equal null                             |        |

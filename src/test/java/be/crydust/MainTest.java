@@ -36,4 +36,27 @@ class MainTest {
         assertThat(reduced, is(Money.dollar(10)));
     }
 
+    @Test
+    void plusReturnsSum() {
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum = (Sum) result;
+        assertThat(sum.augend, is(five));
+        assertThat(sum.addend, is(five));
+    }
+
+    @Test
+    void reduceSum() {
+        Sum sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        assertThat(result, is(Money.dollar(7)));
+    }
+
+    @Test
+    void reduceMoney() {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        assertThat(result, is(Money.dollar(1)));
+    }
 }
