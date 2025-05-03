@@ -59,4 +59,12 @@ class MainTest {
         Money result = bank.reduce(Money.dollar(1), "USD");
         assertThat(result, is(Money.dollar(1)));
     }
+
+    @Test
+    void reduceMoneyDifferentCurrency() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USR", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        assertThat(result, is(Money.dollar(1)));
+    }
 }
