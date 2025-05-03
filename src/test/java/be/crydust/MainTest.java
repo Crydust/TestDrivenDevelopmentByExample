@@ -27,4 +27,10 @@ class MainTest {
         assertThat(Money.franc(5).currency(), is("CHF"));
     }
 
+    @Test
+    void simpleAddition() {
+        Money sum = Money.dollar(5).plus(Money.dollar(5));
+        assertThat(sum, is(Money.dollar(10)));
+    }
+
 }
