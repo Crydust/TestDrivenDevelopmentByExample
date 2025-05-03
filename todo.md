@@ -13,7 +13,7 @@ Todo
 | Common times                           | done   |
 | Compare Francs with Dollars            | done   |
 | Currency?                              | done   |
-| 5 USD + 10 CHF = 10 USD if rate is 2:1 |        |
+| 5 USD + 10 CHF = 10 USD if rate is 2:1 | done   |
 | 5 USD + 5 USD = 10 USD                 | done   |
 | Return Money from 5 USD + 5 USD        |        |
 | Bank.reduce(Money)                     | done   |
@@ -23,4 +23,6 @@ Todo
 | hashCode()                             |        |
 | Equal null                             |        |
 | Equal object                           |        |
-| Delete test francMultiplication        |        |
+| Delete test francMultiplication        | done   |
+| Sum.plus                               |        |
+| Expression.times                       |        |

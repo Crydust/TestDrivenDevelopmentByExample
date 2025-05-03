@@ -80,4 +80,15 @@ class MainTest {
         bank.addRate("CHF", "USD", 2);
         assertThat(bank.rate("CHF", "USD"), is(2));
     }
+
+    @Test
+    void mixedAddition() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+        assertThat(result, is(Money.dollar(10)));
+    }
+
 }
