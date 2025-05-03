@@ -24,5 +24,5 @@ Todo
 | Equal null                             |        |
 | Equal object                           |        |
 | Delete test francMultiplication        | done   |
-| Sum.plus                               |        |
+| Sum.plus                               | done   |
 | Expression.times                       |        |

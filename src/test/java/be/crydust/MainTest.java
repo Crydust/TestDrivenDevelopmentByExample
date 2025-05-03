@@ -91,4 +91,14 @@ class MainTest {
         assertThat(result, is(Money.dollar(10)));
     }
 
+    @Test
+    void sumPlusMoney() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+        Money result = bank.reduce(sum, "USD");
+        assertThat(result, is(Money.dollar(15)));
+    }
 }
