@@ -1,24 +1,14 @@
 package be.crydust;
 
-public class WasRun {
-    private final String testMethod;
+public class WasRun extends TestCase {
     public boolean wasRun;
 
-    public WasRun(String testMethod) {
-        this.testMethod = testMethod;
+    public WasRun(String name) {
+        super(name);
     }
 
     public void testMethod() {
         wasRun = true;
     }
 
-    public void run() {
-        try {
-            this.getClass()
-                    .getDeclaredMethod(testMethod)
-                    .invoke(this);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
