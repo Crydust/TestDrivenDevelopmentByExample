@@ -15,18 +15,20 @@ public class TestCaseTest extends TestCase {
     }
 
     public void testTemplateMethod() {
-        test.run();
+        test.run(new TestResult());
         assertEquals("setUp testMethod tearDown ", test.log);
     }
 
     public void testResult() {
-        TestResult result = test.run();
+        TestResult result = new TestResult();
+        test.run(result);
         assertEquals("1 run, 0 failed", result.summary());
     }
 
     public void testFailedResult() {
         test = new WasRun("testBrokenMethod");
-        TestResult result = test.run();
+        TestResult result = new TestResult();
+        test.run(result);
         assertEquals("1 run, 1 failed", result.summary());
     }
 
@@ -37,10 +39,21 @@ public class TestCaseTest extends TestCase {
         assertEquals("1 run, 1 failed", result.summary());
     }
 
+    public void testSuite() {
+        TestSuite suite = new TestSuite();
+        suite.add(new WasRun("testMethod"));
+        suite.add(new WasRun("testBrokenMethod"));
+        TestResult result = suite.run();
+        assertEquals("2 run, 1 failed", result.summary());
+    }
+
     public static void main(String[] args) {
-        new TestCaseTest("testTemplateMethod").run();
-        new TestCaseTest("testResult").run();
-        new TestCaseTest("testFailedResult").run();
-        new TestCaseTest("testFailedResultFormatting").run();
+        TestResult result = new TestResult();
+        new TestCaseTest("testTemplateMethod").run(result);
+        new TestCaseTest("testResult").run(result);
+        new TestCaseTest("testFailedResult").run(result);
+        new TestCaseTest("testFailedResultFormatting").run(result);
+        new TestCaseTest("testSuite").run(result);
+        System.out.println("result = " + result.summary());
     }
 }

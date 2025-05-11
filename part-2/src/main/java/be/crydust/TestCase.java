@@ -13,8 +13,7 @@ public class TestCase {
         // NOOP
     }
 
-    public TestResult run() {
-        TestResult result = new TestResult();
+    public void run(TestResult result) {
         result.testStarted();
         this.setUp();
         try {
@@ -30,7 +29,6 @@ public class TestCase {
             }
         }
         this.tearDown();
-        return result;
     }
 
     public void tearDown() {
