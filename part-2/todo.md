@@ -11,4 +11,6 @@ Todo
 | Run multiple tests                            |        |
 | Report collected results                      | done   |
 | Log string in WasRun                          | done   |
+| Report failed tests                           | done   |
+| Catch and report setUp errors                 |        |
 |                                               |        |

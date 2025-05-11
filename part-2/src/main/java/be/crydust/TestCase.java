@@ -20,7 +20,8 @@ public class TestCase {
                     .getDeclaredMethod(name)
                     .invoke(this);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            result.testFailed();
+            e.printStackTrace();
         }
         this.tearDown();
         return result;
