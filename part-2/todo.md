@@ -9,6 +9,6 @@ Todo
 | Invoke tearDown afterward                     | done   |
 | Invoke tearDown even if the test method fails |        |
 | Run multiple tests                            |        |
-| Report collected results                      |        |
+| Report collected results                      | done   |
 | Log string in WasRun                          | done   |
 |                                               |        |

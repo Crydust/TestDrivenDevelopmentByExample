@@ -11,7 +11,9 @@ public class TestCase {
         // NOOP
     }
 
-    public void run() {
+    public TestResult run() {
+        TestResult result = new TestResult();
+        result.testStarted();
         this.setUp();
         try {
             this.getClass()
@@ -21,6 +23,7 @@ public class TestCase {
             throw new RuntimeException(e);
         }
         this.tearDown();
+        return result;
     }
 
     public void tearDown() {
