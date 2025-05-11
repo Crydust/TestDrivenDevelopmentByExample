@@ -3,7 +3,7 @@ package be.crydust;
 import static be.crydust.CustomAssertions.assertEquals;
 
 public class TestCaseTest extends TestCase {
-    private WasRun test;
+    private TestResult result;
 
     public TestCaseTest(String name) {
         super(name);
@@ -11,29 +11,28 @@ public class TestCaseTest extends TestCase {
 
     @Override
     public void setUp() {
-        test = new WasRun("testMethod");
+        result = new TestResult();
     }
 
     public void testTemplateMethod() {
-        test.run(new TestResult());
+        WasRun test = new WasRun("testMethod");
+        test.run(result);
         assertEquals("setUp testMethod tearDown ", test.log);
     }
 
     public void testResult() {
-        TestResult result = new TestResult();
+        WasRun test = new WasRun("testMethod");
         test.run(result);
         assertEquals("1 run, 0 failed", result.summary());
     }
 
     public void testFailedResult() {
-        test = new WasRun("testBrokenMethod");
-        TestResult result = new TestResult();
+        WasRun test = new WasRun("testBrokenMethod");
         test.run(result);
         assertEquals("1 run, 1 failed", result.summary());
     }
 
     public void testFailedResultFormatting() {
-        var result = new TestResult();
         result.testStarted();
         result.testFailed();
         assertEquals("1 run, 1 failed", result.summary());
@@ -43,17 +42,19 @@ public class TestCaseTest extends TestCase {
         TestSuite suite = new TestSuite();
         suite.add(new WasRun("testMethod"));
         suite.add(new WasRun("testBrokenMethod"));
-        TestResult result = suite.run();
+        suite.run(result);
         assertEquals("2 run, 1 failed", result.summary());
     }
 
     public static void main(String[] args) {
+        TestSuite suite = new TestSuite();
+        suite.add(new TestCaseTest("testTemplateMethod"));
+        suite.add(new TestCaseTest("testResult"));
+        suite.add(new TestCaseTest("testFailedResult"));
+        suite.add(new TestCaseTest("testFailedResultFormatting"));
+        suite.add(new TestCaseTest("testSuite"));
         TestResult result = new TestResult();
-        new TestCaseTest("testTemplateMethod").run(result);
-        new TestCaseTest("testResult").run(result);
-        new TestCaseTest("testFailedResult").run(result);
-        new TestCaseTest("testFailedResultFormatting").run(result);
-        new TestCaseTest("testSuite").run(result);
+        suite.run(result);
         System.out.println("result = " + result.summary());
     }
 }
