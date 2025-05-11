@@ -8,6 +8,7 @@ public class TestCase {
     }
 
     public void setUp() {
+        // NOOP
     }
 
     public void run() {
@@ -19,5 +20,11 @@ public class TestCase {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        this.tearDown();
     }
+
+    public void tearDown() {
+        // NOOP
+    }
+
 }
