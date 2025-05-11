@@ -41,8 +41,8 @@ class MainTest {
         Money five = Money.dollar(5);
         Expression result = five.plus(five);
         Sum sum = (Sum) result;
-        assertThat(sum.augend, is(five));
-        assertThat(sum.addend, is(five));
+        assertThat(sum.augend(), is(five));
+        assertThat(sum.addend(), is(five));
     }
 
     @Test

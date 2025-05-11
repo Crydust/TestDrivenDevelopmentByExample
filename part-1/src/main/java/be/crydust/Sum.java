@@ -1,13 +1,6 @@
 package be.crydust;
 
-public class Sum implements Expression {
-    public Expression augend;
-    public Expression addend;
-
-    public Sum(Expression augend, Expression addend) {
-        this.augend = augend;
-        this.addend = addend;
-    }
+public record Sum(Expression augend, Expression addend) implements Expression {
 
     @Override
     public Money reduce(Bank bank, String to) {
