@@ -3,18 +3,23 @@ package be.crydust;
 import static be.crydust.CustomAssertions.assertTrue;
 
 public class TestCaseTest extends TestCase {
+    private WasRun test;
+
     public TestCaseTest(String name) {
         super(name);
     }
 
+    @Override
+    public void setUp() {
+        test = new WasRun("testMethod");
+    }
+
     public void testRunning() {
-        var test = new WasRun("testMethod");
         test.run();
         assertTrue(test.wasRun, "wasRun should be true after running the test");
     }
 
     public void testSetUp() {
-        var test = new WasRun("testMethod");
         test.run();
         assertTrue(test.wasSetup, "wasSetup should be true after running the test");
     }
