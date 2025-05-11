@@ -1,5 +1,7 @@
 package be.crydust;
 
+import static be.crydust.CustomAssertions.assertTrue;
+
 public class TestCaseTest extends TestCase {
     public TestCaseTest(String name) {
         super(name);
@@ -7,9 +9,9 @@ public class TestCaseTest extends TestCase {
 
     public void testRunning() {
         var test = new WasRun("testMethod");
-        assert !test.wasRun;
+        assertTrue(!test.wasRun, "wasRun should be false before running the test");
         test.run();
-        assert test.wasRun;
+        assertTrue(test.wasRun, "wasRun should be true after running the test");
     }
 
     public static void main(String[] args) {
