@@ -7,7 +7,11 @@ public class TestCase {
         this.name = name;
     }
 
+    public void setUp() {
+    }
+
     public void run() {
+        this.setUp();
         try {
             this.getClass()
                     .getDeclaredMethod(name)
