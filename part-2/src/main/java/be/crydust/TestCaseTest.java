@@ -1,6 +1,6 @@
 package be.crydust;
 
-import static be.crydust.CustomAssertions.assertTrue;
+import static be.crydust.CustomAssertions.assertEquals;
 
 public class TestCaseTest extends TestCase {
     private WasRun test;
@@ -16,7 +16,7 @@ public class TestCaseTest extends TestCase {
 
     public void testTemplateMethod() {
         test.run();
-        assertTrue(test.log.equals("setUp testMethod "));
+        assertEquals("setUp testMethod ", test.log);
     }
 
     public static void main(String[] args) {
