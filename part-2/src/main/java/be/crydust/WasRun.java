@@ -1,8 +1,7 @@
 package be.crydust;
 
 public class WasRun extends TestCase {
-    public Boolean wasRun = null;
-    public Boolean wasSetup = null;
+    public String log = "";
 
     public WasRun(String name) {
         super(name);
@@ -10,12 +9,11 @@ public class WasRun extends TestCase {
 
     @Override
     public void setUp() {
-        wasRun = false;
-        wasSetup = true;
+        log += "setUp ";
     }
 
     public void testMethod() {
-        wasRun = true;
+        log += "testMethod ";
     }
 
 }
