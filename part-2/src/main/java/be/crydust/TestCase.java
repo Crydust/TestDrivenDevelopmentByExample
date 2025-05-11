@@ -15,9 +15,9 @@ public class TestCase {
 
     public void run(TestResult result) {
         result.testStarted();
-        this.setUp();
+        setUp();
         try {
-            this.getClass()
+            getClass()
                     .getDeclaredMethod(name)
                     .invoke(this);
         } catch (Exception e) {
@@ -28,7 +28,7 @@ public class TestCase {
                 e.printStackTrace();
             }
         }
-        this.tearDown();
+        tearDown();
     }
 
     public void tearDown() {
