@@ -1,5 +1,7 @@
 package be.crydust;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class TestCase {
     private final String name;
 
@@ -21,7 +23,11 @@ public class TestCase {
                     .invoke(this);
         } catch (Exception e) {
             result.testFailed();
-            e.printStackTrace();
+            if (e instanceof InvocationTargetException ite) {
+                ite.getCause().printStackTrace();
+            } else {
+                e.printStackTrace();
+            }
         }
         this.tearDown();
         return result;
