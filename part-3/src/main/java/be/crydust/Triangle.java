@@ -1,8 +1,6 @@
 package be.crydust;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public final class Triangle {
     private Triangle() {
@@ -11,10 +9,10 @@ public final class Triangle {
 
     public static int determineShape(int sideA, int sideB, int sideC) {
 
-        List<Integer> sides = Arrays.asList(sideA, sideB, sideC);
-        Collections.sort(sides);
-        if (sides.get(0) <= 0
-            || sides.get(0) + sides.get(1) <= sides.get(2)) {
+        int[] sides = {sideA, sideB, sideC};
+        Arrays.sort(sides);
+        if (sides[0] <= 0
+            || sides[0] + sides[1] <= sides[2]) {
             throw new IllegalArgumentException("Not a well formed triangle");
         }
 
